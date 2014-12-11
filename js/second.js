@@ -11,7 +11,7 @@ function GetQueryString(name)
 {
      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
      var r = window.location.search.substr(1).match(reg);
-     if(r ! = null) return unescape(r[2]); return null;
+     if(r!=null)return  unescape(r[2]); return null;
 }
 function setName() {
 	girl_name = GetQueryString("girl");
@@ -27,7 +27,7 @@ function setName() {
 		$(".boy_name").text(boy_name);
 	}
 }
-function saveResult(boyName, girlName, time, second) {
+function saveResult ( boyName, girlName, time, second ) {
 	if(window.localStorage){
 		var result = new Array();
 		var resultItem = {};
@@ -47,7 +47,7 @@ function saveResult(boyName, girlName, time, second) {
 			}
 		}
 	}else{
-		console.info('This browser does NOT support localStorage');
+		console.infO('This browser does NOT support localStorage');
 	}
 }
 function clearTimeMeter() {
