@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G</title>
+<style>
+ @font-face {
+    font-family: 'ArialRoundedBold';
+    src: url('font/Arial-Rounded-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+* { margin:0; padding:0; }
+body {
+	color:#fff;
+	font-family:"ArialRoundedBold";
+}
+.box {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:url(img/bg3.png) no-repeat;
+	background-size:100% 100%;
+	overflow:hidden;
+}
+.ranking {
+	margin-top:10px;
+	list-style:none;
+	font-size:35px;
+	font-weight:bolder;
+	max-height: 450px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.ranking img {
+	width: 25px;
+	margin: 0 10px;
+}
+.ranking li {
+	margin-top:10px;
+}
+.ranking .time {
+	float: right;
+}
+.again {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	font-size: 65px;
+	color: #fff;
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div style="width:40%; position: absolute; top: 10%; right: 10%;">
+    	<p style="font-size:40px; font-weight:bolder;">RRSULT</p>
+        <ul class="ranking">
+        	<li><label>1.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+            <li><label>2.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+            <li><label>3.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+            <li><label>4.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+            <li><label>5.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+            <li><label>6.</label><label>Jack</label><img alt="" src="img/little.png"><label>Rose</label><label class="time">2m13s</label></li>
+        </ul>
+    </div>
+    <a href="first.html" class="again">play again</a>
+</div>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(e) {
+    if(window.localStorage){
+		var result = new Array();
+		var jsonArray = new Array();
+		if(localStorage['result'] == null ){
+			localStorage['result'] = "[]";
+		}
+		result = JSON.parse(localStorage['result']);
+		for(var i=0; i<result.length; i++){
+			jsonArray[i] = JSON.parse(result[i]);
+		}
+		$(".ranking").empty();
+		var length = jsonArray.length;
+    	for (var i = 0; i <= length - 1; i++)
+    	{
+        	for (var j = length - 1; j > i; j--)
+        	{
+            	if (jsonArray[j].second < jsonArray[j - 1].second)
+            	{
+                	var temp = jsonArray[j];
+                	jsonArray[j] = jsonArray[j - 1];
+                	jsonArray[j - 1] = temp;
+            	}
+        	}
+   		}
+		console.info(jsonArray);
+		for(var j=0; j<jsonArray.length; j++){
+			var k = j + 1;
+			var html = "<li><label>"+k+".</label><label>"+jsonArray[j].boyName+"</label><img alt='' src='img/little.png'><label>"
+						+jsonArray[j].girlName+"</label><label class='time'>"+jsonArray[j].time+"</label></li>";
+			$(".ranking").append(html);
+		}
+	}else{
+		console.infO('This browser does NOT support localStorage');
+	}
+});
+</script>
+</body>
+</html>

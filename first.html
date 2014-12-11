@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G</title>
+<style>
+@font-face {
+    font-family: 'ArialRoundedBold';
+    src: url('font/Arial-Rounded-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	margin:0;
+	padding:0;
+	font-family: 'ArialRoundedBold';
+}
+.box {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:url(img/bg1.jpg) no-repeat;
+	background-size:100% 100%;
+	overflow:hidden;
+}
+.login {
+	list-style: none;
+	margin-top: 20%;
+	text-align: center;
+}
+.login li {
+	padding:10px;
+}
+.login input {
+	inline-block;
+	width: 30%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.login label{
+	display: inline-block;
+	width:120px;
+	text-align: right;
+	font-size: 30px;
+	font-weight: bolder;
+	color: #fff;
+}
+.login button {
+	display: inline-block;
+	width:32%;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #ff2200;
+	border-color: #d43f3a;
+}
+button:focues,button:active {
+	border:none;
+}
+.title {
+	position:absolute;
+	top:0;
+	left:0;
+	font-size:40px;
+	padding: 10px 0 0 45px;
+	background: #000;
+	width: 100%;
+	color: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div class='title'>
+       G.Chao
+    </div>
+	<ul class="login">
+    	<li><label>Boy:&nbsp;&nbsp;</label><input id="boy" maxlength="8" placeholder="请输入男方名字"></li>
+        <li><label>Girl:&nbsp;&nbsp;</label><input id="girl" maxlength="8" placeholder="请输入女方名字"></li>
+        <li><label></label><button onClick="letsGo()">Let's go !</button></li>
+    </ul>
+</div>
+
+<script src="jquery.min.js"></script>
+<script>
+function letsGo()
+{
+	 window.location.href = "second.html?boy=" + escape($("#boy").val()) + "&girl=" + escape($("#girl").val());
+}
+</script>
+</body>
+</html>
