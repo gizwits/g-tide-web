@@ -113,7 +113,7 @@ function expression(ele,num) {
 	var gvalue_2 = 0;
 	var appid = "2415895d7c89453da8e05051301b5572";
 		var uid = "7035193c40f1433b9247061f2d7d267e";
-		var token = "475f7d289a264ad982ea92691e535b61";
+		var token = "273df64357134575844ca426dabc7b00";
 		var p0_type = "attrs_v4";
 		var url = "ws://m2m.gizwits.com:8080/ws/app/v1";
 		var did1="FARBuG8potLbidPpupndUE";
