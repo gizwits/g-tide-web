@@ -93,6 +93,7 @@ function expression(ele,num) {
 		var audioSrc = audioEle.attr("src");
 		if( num < 51 ){
 			src = array[0];
+            /*
 			if( audioSrc != "audio/h1_01.mp3" && ele == ".girl_expression" ){
                 if(num > 0)
                     document.getElementById('audio_sex1').play();
@@ -103,9 +104,11 @@ function expression(ele,num) {
                 document.getElementById('audio_sex4').pause();
                 document.getElementById('audio_sex5').pause();
 			}
+            */
 		}
 		if( num > 50 && num < 101) {
 			src = array[1];
+            /*
 			if( audioSrc != "audio/h1_02.mp3" && ele == ".girl_expression" ){
                 document.getElementById('audio_sex1').pause();
                 document.getElementById('audio_sex2').play();
@@ -113,9 +116,11 @@ function expression(ele,num) {
                 document.getElementById('audio_sex4').pause();
                 document.getElementById('audio_sex5').pause();
 			}
+            */
 		}
 		if( num > 100 && num < 151) {
 			src = array[2];
+            /*
 			if( audioSrc != "audio/h1_03.mp3" && ele == ".girl_expression" ){
                 document.getElementById('audio_sex1').pause();
                 document.getElementById('audio_sex2').pause();
@@ -123,9 +128,11 @@ function expression(ele,num) {
                 document.getElementById('audio_sex4').pause();
                 document.getElementById('audio_sex5').pause();
 			}
+            */
 		}
 		if( num > 150 && num < 201) {
 			src = array[3];
+            /*
 			if( audioSrc != "audio/h1_04.mp3" && ele == ".girl_expression" ){
                 document.getElementById('audio_sex1').pause();
                 document.getElementById('audio_sex2').pause();
@@ -133,9 +140,11 @@ function expression(ele,num) {
                 document.getElementById('audio_sex4').play();
                 document.getElementById('audio_sex5').pause();
 			}
+            */
 		}
 		if( num > 200 ) {
 			src = array[4];
+            /*
 			if( audioSrc != "audio/h1_05.mp3" && ele == ".girl_expression" ){
                 document.getElementById('audio_sex1').pause();
                 document.getElementById('audio_sex2').pause();
@@ -146,6 +155,7 @@ function expression(ele,num) {
                 else
                     document.getElementById('audio_sex5').pause();
 			}
+            */
 			
 		}
 		$(this).attr("src",src);
