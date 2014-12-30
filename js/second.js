@@ -53,7 +53,6 @@ function saveResult ( boyName, girlName, time, second ) {
 function clearTimeMeter() {
 	clearTimeout(t);
 	$(".complete").fadeIn();
-	$("#audio_sex").attr("src","");
 	return false;
 }
 function timeMeter() {
@@ -89,74 +88,20 @@ function expression(ele,num) {
 	bottom = bottom + "%";
 	var src;
 	$(ele).animate({bottom:bottom},500,function(){
-		var audioEle = $("#audio_sex");
-		var audioSrc = audioEle.attr("src");
 		if( num < 51 ){
 			src = array[0];
-            /*
-			if( audioSrc != "audio/h1_01.mp3" && ele == ".girl_expression" ){
-                if(num > 0)
-                    document.getElementById('audio_sex1').play();
-                else
-                    document.getElementById('audio_sex1').pause();
-                document.getElementById('audio_sex2').pause();
-                document.getElementById('audio_sex3').pause();
-                document.getElementById('audio_sex4').pause();
-                document.getElementById('audio_sex5').pause();
-			}
-            */
 		}
 		if( num > 50 && num < 101) {
 			src = array[1];
-            /*
-			if( audioSrc != "audio/h1_02.mp3" && ele == ".girl_expression" ){
-                document.getElementById('audio_sex1').pause();
-                document.getElementById('audio_sex2').play();
-                document.getElementById('audio_sex3').pause();
-                document.getElementById('audio_sex4').pause();
-                document.getElementById('audio_sex5').pause();
-			}
-            */
 		}
 		if( num > 100 && num < 151) {
 			src = array[2];
-            /*
-			if( audioSrc != "audio/h1_03.mp3" && ele == ".girl_expression" ){
-                document.getElementById('audio_sex1').pause();
-                document.getElementById('audio_sex2').pause();
-                document.getElementById('audio_sex3').play();
-                document.getElementById('audio_sex4').pause();
-                document.getElementById('audio_sex5').pause();
-			}
-            */
 		}
 		if( num > 150 && num < 201) {
 			src = array[3];
-            /*
-			if( audioSrc != "audio/h1_04.mp3" && ele == ".girl_expression" ){
-                document.getElementById('audio_sex1').pause();
-                document.getElementById('audio_sex2').pause();
-                document.getElementById('audio_sex3').pause();
-                document.getElementById('audio_sex4').play();
-                document.getElementById('audio_sex5').pause();
-			}
-            */
 		}
 		if( num > 200 ) {
 			src = array[4];
-            /*
-			if( audioSrc != "audio/h1_05.mp3" && ele == ".girl_expression" ){
-                document.getElementById('audio_sex1').pause();
-                document.getElementById('audio_sex2').pause();
-                document.getElementById('audio_sex3').pause();
-                document.getElementById('audio_sex4').pause();
-                if( num < 254 )
-                    document.getElementById('audio_sex5').play();
-                else
-                    document.getElementById('audio_sex5').pause();
-			}
-            */
-			
 		}
 		$(this).attr("src",src);
 	});
@@ -280,7 +225,6 @@ function expression(ele,num) {
 						fight(".boy_g",maxG);
 						expression(".girl_expression",maxG);
 						expression(".boy_expression",maxG);
-                        document.getElementById('audio_sex5').pause();
 						clearTimeMeter();
 						disconnect();
 						break;
@@ -303,7 +247,6 @@ function expression(ele,num) {
 						fight(".boy_g",maxG);
 						expression(".girl_expression",maxG);
 						expression(".boy_expression",maxG);
-                        document.getElementById('audio_sex5').pause();
 						clearTimeMeter();
 						disconnect();
 						break;
